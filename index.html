@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booker UI</title>
+    <style>
+       *{
+           margin: 0px;
+           padding: 0px;
+           font-weight: bold;
+           font-family: Verdana, Geneva, Tahoma, sans-serif;
+       }
+       
+       .header{
+            width: 100%;
+            height: 10%;
+            background-color: white;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 2px black;
+            z-index: 1;
+        }
+#kks{
+    position: absolute;
+    left: 32%;
+}
+        #kks li{
+            list-style: none;
+            font-weight: bold;
+            display: inline-block;
+            color: black;
+            padding: 5px 7px;
+            font-size: 1.8vh;
+           
+        }
+
+        .header button{
+            width: 14vh;
+            height: 5vh;
+            background-color: rgb(63, 186, 227);
+            position: absolute;
+            left: 5%;
+            outline: none;
+            border: none;
+            color: white;
+            border-radius: 0.8vh;
+        }
+
+        #welcometext{
+            position: absolute;
+            top: 20%;
+            left: 5%;
+        }
+        #typestext{
+            position: absolute;
+            top:90%;
+            left: 5%;
+        }
+       .hotelcan{
+           width: 100%;
+           height: 60vh;
+           position: absolute;
+           top: 30%;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+       }
+
+        #hotelimg{
+            width: 50vh;
+            height: 50vh;
+            position: absolute;
+            border-radius: 0.7vh;
+        }
+
+        .cover{
+            position: absolute;
+            width: 50vh;
+            height: 10%;
+            background: #efefef;
+            border-radius: 0.7vh;
+            top: 81.7%;
+            display: flex;
+            align-items: center;
+        }
+
+        .cover h5{
+            position: absolute;
+            left: 5%;
+            top: 10%;
+
+        }
+        .cover h6{
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            color: lightgray;
+        }
+
+        .cover button{
+            width: 14vh;
+            height: 4vh;
+  background: #efefef;
+  border: none;
+  border-radius: .5rem;
+  color: #444;
+  font-size: 1.4vh;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+              -6px -6px 10px rgba(255, 255, 255, .5),
+              6px 6px 8px rgba(255, 255, 255, .075),
+              6px 6px 10px rgba(0, 0, 0, .15);
+              left: 70%;
+              position: absolute;
+}
+
+.cover button:hover {
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+              -2px -2px 4px rgba(255, 255, 255, .4),
+              2px 2px 2px rgba(255, 255, 255, .05),
+              2px 2px 4px rgba(0, 0, 0, .1);
+}
+.cover button:active {
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+              inset -2px -2px 4px rgba(255, 255, 255, .5),
+              inset 2px 2px 2px rgba(255, 255, 255, .075),
+              inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+.alltypes{
+    width: 100%;
+           height: 60vh;
+           position: absolute;
+           top: 110%;
+           display: flex;
+           align-items: center;
+           background-color: #efefef;
+           overflow: scroll;
+}
+
+.hoteltype{
+    width: 40vh;
+            height: 40vh;
+  background: #efefef;
+  border: none;
+  border-radius: .5rem;
+  color: #444;
+  font-size: 1.4vh;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+              -6px -6px 10px rgba(255, 255, 255, .5),
+              6px 6px 8px rgba(255, 255, 255, .075),
+              6px 6px 10px rgba(0, 0, 0, .15);
+              left: 5vh;
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+}
+
+.hoteltype img{
+    width: 20vh;
+    height: 20vh;
+    position: absolute;
+}
+
+.hoteltype h3{
+    position: absolute;
+    top: 80%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.roomtype{
+    width: 40vh;
+            height: 40vh;
+  background: #efefef;
+  border: none;
+  border-radius: .5rem;
+  color: #444;
+  font-size: 1.4vh;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+              -6px -6px 10px rgba(255, 255, 255, .5),
+              6px 6px 8px rgba(255, 255, 255, .075),
+              6px 6px 10px rgba(0, 0, 0, .15);
+              left: 50vh;
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+}
+
+.roomtype img{
+    width: 20vh;
+    height: 20vh;
+    position: absolute;
+}
+
+.roomtype h3{
+    position: absolute;
+    top: 80%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.dinnertype{
+    width: 40vh;
+            height: 40vh;
+  background: #efefef;
+  border: none;
+  border-radius: .5rem;
+  color: #444;
+  font-size: 1.4vh;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+              -6px -6px 10px rgba(255, 255, 255, .5),
+              6px 6px 8px rgba(255, 255, 255, .075),
+              6px 6px 10px rgba(0, 0, 0, .15);
+              left: 95vh;
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+}
+
+.dinnertype img{
+    width: 20vh;
+    height: 20vh;
+    position: absolute;
+}
+
+.dinnertype h3{
+    position: absolute;
+    top: 80%;
+    font-weight: bold;
+    font-size: large;
+}
+::-webkit-scrollbar{ 
+           display: none;
+         }
+
+         .partytype{
+    width: 40vh;
+            height: 40vh;
+  background: #efefef;
+  border: none;
+  border-radius: .5rem;
+  color: #444;
+  font-size: 1.4vh;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+              -6px -6px 10px rgba(255, 255, 255, .5),
+              6px 6px 8px rgba(255, 255, 255, .075),
+              6px 6px 10px rgba(0, 0, 0, .15);
+              left: 140vh;
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+}
+
+.partytype img{
+    width: 20vh;
+    height: 20vh;
+    position: absolute;
+}
+
+.partytype h3{
+    position: absolute;
+    top: 80%;
+    font-weight: bold;
+    font-size: large;
+}
+
+.staytype{
+    width: 40vh;
+            height: 40vh;
+  background: #efefef;
+  border: none;
+  border-radius: .5rem;
+  color: #444;
+  font-size: 1.4vh;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+              -6px -6px 10px rgba(255, 255, 255, .5),
+              6px 6px 8px rgba(255, 255, 255, .075),
+              6px 6px 10px rgba(0, 0, 0, .15);
+              left: 185vh;
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+}
+
+.staytype img{
+    width: 20vh;
+    height: 20vh;
+    position: absolute;
+}
+
+.staytype h3{
+    position: absolute;
+    top: 80%;
+    font-weight: bold;
+    font-size: large;
+}
+.footer{
+    width: 100%;
+            height: 10%;
+            background-color: white;
+            position: absolute;
+            top: 180%;
+            left: 0px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 2px black;
+            z-index: 1;
+            justify-content: center;
+}
+#hmm{
+    position: absolute;
+    display: inline-block;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul id="kks">
+            <li>Home</li>
+            <li>Hotels</li>
+            <li>Rooms</li>
+            <li>Contact</li>
+            
+        </ul>
+
+        <button>Sign Up</button>
+    </div>
+
+    <h3 id="welcometext">Welcome, Jack</h3>
+
+
+  <div class="hotelcan">
+        <img id="hotelimg" src="https://cdn.britannica.com/96/115096-050-5AFDAF5D/Bellagio-Hotel-Casino-Las-Vegas.jpg">
+
+        <div class="cover">
+            <h5>5 Star Hotel</h5>
+            <h6>This Is 5 Star Hotel Book Now.</h6>
+
+            <button>Book</button>
+        </div>
+    </div>
+
+    <h3 id="typestext">Types</h3>
+
+    <div class="alltypes">
+        <div class="hoteltype">
+            <img src="https://cdn-icons-png.flaticon.com/512/235/235889.png">
+            <h3>Hotel</h3>
+        </div>
+        <div class="roomtype">
+            <img src="https://cdn0.iconfinder.com/data/icons/interior-design-filled-outline/340/bedroom_room_interior_home_bed_furniture_lamp_house_pillows-512.png">
+            <h3>Room</h3>
+        </div>
+
+        <div class="dinnertype">
+            <img src="https://cdn-icons-png.flaticon.com/512/878/878220.png">
+          
+            <h3>Dinner</h3>
+        </div>
+
+        <div class="partytype">
+            <img src="https://icons.iconarchive.com/icons/google/noto-emoji-activities/1024/52707-party-popper-icon.png">
+          
+            <h3>Party</h3>
+        </div>
+
+        <div class="staytype">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/stay-in-home-2315652-1921397.png">
+          
+            <h3>Stay</h3>
+        </div>
+    </div>
+
+<div class="footer">
+    <h3 id="hmm">Give It A Like.</h3>
+    </div>
+</body>
+</html>
